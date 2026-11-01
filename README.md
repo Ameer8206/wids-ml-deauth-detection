@@ -36,6 +36,17 @@ The included results come from synthetic data, used to validate the pipeline. Re
 
 ## Ethics
 Capture and test attacks only on your own or an approved, isolated lab network.
+## Real-data results (AWID3)
+Evaluated on AWID3 Deauth files 21-32 (about 576,000 frames), 1-second windows,
+time-based 70/30 split (train on earlier traffic, test on later traffic).
+Test set: 706 normal and 143 attack windows. Accuracy 100%, 0 errors.
 
+    python wids_awid.py          (needs AWID3_Dataset_CSV.zip in the same folder)
+    python wids_awid.py ablate   (harder test: deauth-count features removed)
+
+Files: awid_confusion_matrix.png, awid_feature_importance.png, awid_blocklist.json
+The images confusion_matrix.png and feature_importance.png are from the synthetic demo (python wids.py --synthetic --wips).
+
+Note: a perfect score on one capture with a small test set is promising, not proof.
 ## Author
-Amir Fuad, Strathmore University (CNS 3204 assignment)
+Amir Fuad 193554, Strathmore University (CNS 3204 assignment)
